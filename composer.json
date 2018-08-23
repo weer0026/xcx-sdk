@@ -12,6 +12,7 @@
       "HangJia\\Xcx\\": "src/"
     }
   },
+  "minimum-stability": "dev",
   "require": {
     "php": "^5.6.0 || ^7.1",
     "guzzlehttp/guzzle": "^6.0",
