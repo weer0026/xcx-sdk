@@ -1,24 +1,15 @@
 {
-  "name": "hangjia/xcx",
-  "type": "library",
-  "description": "Hang Jia mini program SDK",
-  "license": "MIT",
-  "keywords": ["hangjia"],
-  "authors": [
-    {
-      "name": "hc",
-      "email": "wr.hechuan@gmail.com"
+    "name": "hangjia/xcx",
+    "description": "Hangjia Mini Program SDK",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hc",
+            "email": "wr.hechuan@gmail.com"
+        }
+    ],
+    "require": {
+      "guzzlehttp/guzzle": "6.3.*"
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "HangJia\\Xcx\\": "src/"
-    }
-  },
-  "require": {
-    "php": ">=5.6.0",
-    "guzzlehttp/guzzle": "^6.2",
-    "ext-curl": "*",
-    "ext-json": "*"
-  }
 }
