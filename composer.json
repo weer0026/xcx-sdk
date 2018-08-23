@@ -1,0 +1,21 @@
+{
+  "name": "hangjia/xcx-sdk",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "hc",
+      "email": "wr.hechuan@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "HangJia\\Xcx": "src/"
+    }
+  },
+  "require": {
+    "php": "^5.6.0 || ^7.1",
+    "guzzlehttp/guzzle": "^6.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  }
+}
