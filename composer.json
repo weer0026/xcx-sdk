@@ -1,5 +1,7 @@
 {
   "name": "hang-jia/xcx-sdk",
+  "type": "library",
+  "description": "Hang Jia mini program SDK",
   "license": "MIT",
   "authors": [
     {
