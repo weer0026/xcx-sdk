@@ -3,6 +3,11 @@
     "description": "Hangjia Mini Program SDK",
     "type": "library",
     "license": "MIT",
+    "autoload": {
+      "psr-4": {
+        "Hangjia\\Xcx\\": "src"
+      }
+    },
     "authors": [
         {
             "name": "hc",

@@ -1,6 +1,6 @@
 <?php
 
-namespace HangJia\Open\Traits;
+namespace HangJia\Xcx\Traits;
 
 /**
  * @description: request基础trait
