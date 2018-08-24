@@ -9,5 +9,16 @@ namespace HangJia\Xcx\Base;
  */
 class Util
 {
-
+    /**
+     * 获取cookie,并进行url编码，防止cookie拆分。
+     * @return array
+     */
+    public static function getCookie()
+    {
+        $cookie = [];
+        foreach ($_COOKIE as $name => $value) {
+            $cookie[$name] = urlencode($value);
+        }
+        return $cookie;
+    }
 }

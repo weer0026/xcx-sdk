@@ -4,6 +4,7 @@ namespace HangJia\Xcx;
 
 use GuzzleHttp\Cookie\CookieJar;
 use HangJia\Xcx\Base\Application;
+use HangJia\Xcx\Base\Util;
 
 /**
  * @description:
@@ -18,7 +19,8 @@ class User extends Application
     public function login()
     {
         $config = $this->getConfig();
-        $options['cookies'] = CookieJar::fromArray($_COOKIE, $config['cookie_domain']);
-        return $this->httpGet('api/mp/util/login', [], []);
+        $cookies = Util::getCookie();
+        $options['cookies'] = CookieJar::fromArray($cookies, $config['cookie_domain']);
+        return $this->httpGet('api/mp/util/login', [], $options);
     }
 }
