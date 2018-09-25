@@ -3,7 +3,7 @@
 namespace HangJia\Xcx\Base;
 
 use GuzzleHttp\Exception\ServerException;
-use HangJia\Open\Traits\HttpRequest;
+use HangJia\Xcx\Traits\HttpRequest;
 use HangJia\Xcx\Exceptions\BadResponseException;
 
 /**

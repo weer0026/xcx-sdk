@@ -7,7 +7,7 @@ use HangJia\Xcx\Base\Application;
 use HangJia\Xcx\Base\Util;
 
 /**
- * @description:
+ * @description: 用户模块
  * @author: He Chuan
  * @version: 18/8/22 下午2:40
  */
@@ -21,6 +21,6 @@ class User extends Application
         $config = $this->getConfig();
         $cookies = Util::getCookie();
         $options['cookies'] = CookieJar::fromArray($cookies, $config['cookie_domain']);
-        return $this->httpGet('api/mp/util/login', [], $options);
+        return $this->httpGet('util/login', [], $options);
     }
 }
