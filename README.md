@@ -20,6 +20,13 @@ Array {
     }
 }
 ```
+
+### 获取授权地址
+```php
+$auth = \HangJia\Xcx\Factory::auth();
+$url = $auth->getAuthUrl($app_id, $partner_id, $note = null);
+// 获取地址后重定向到该地址
+```
 ### 发布
 ```php
 $submit = \HangJia\Xcx\Factory::submit();
@@ -28,6 +35,35 @@ $re = $submit->release($app_id, $ext_json);
 ```
 
 ### 发布状态
+```
+状态码字典:
+
+需要弹出授权页面的状态(大于10000)
+
+10001: 未授权
+
+10002：取消授权
+
+10003: 已授权但缺少部分权限（如开发权限）
+
+授权后的状态
+
+-1: 授权后，但是未提交过版本
+
+0: 接受请求，但还没有提交到微信端。
+
+1: 代码审核中
+
+2: 审核通过
+
+3: 审核失败, 检查reason字段获取详细报错信息
+
+4: 已上线
+
+5: 出现错误，检查reason字段获取详细报错信息
+
+6: 撤销审核
+```
 ```php
 $submit = \HangJia\Xcx\Factory::submit();
 $re = $submit->status($app_id);
