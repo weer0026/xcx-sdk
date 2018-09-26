@@ -5,6 +5,9 @@
 `composer require hangjia/xcx`
 
 ## API文档
+> API使用流程图
+
+![流程图](./flow.png)
 
 ### 登录
 ```php
@@ -15,20 +18,25 @@ Array {
     'code' => 200,
     'msg' => '',
     'data' => Array {
-        'user_name' => 'xxx',
-        'app_id' => 13
+        'user_name' => 'xxx', // 用户名
+        'partner_id' => 1, // 合作商ID
+        'app_id' => 13     // 应用ID
     }
 }
 ```
 
 ### 获取授权地址
+> 该接口返回一个链接地址，请新开一个窗口跳转，授权结束后会页面会自动关闭。
 ```php
+// $note（可选） 备注
 $auth = \HangJia\Xcx\Factory::auth();
 $url = $auth->getAuthUrl($app_id, $partner_id, $note = null);
 // 获取地址后重定向到该地址
 ```
 ### 发布
+[小程序第三方开发文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/ext.html)
 ```php
+// $ext_json array 第三方小程序配置文件 详情见上方文档
 $submit = \HangJia\Xcx\Factory::submit();
 $re = $submit->release($app_id, $ext_json);
 // 只返回队列号，异步接口，所以查看状态请使用 "发布状态" 接口。
