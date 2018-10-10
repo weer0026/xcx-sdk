@@ -2,6 +2,8 @@
 
 namespace HangJia\Xcx\Traits;
 
+use GuzzleHttp\HandlerStack;
+
 /**
  * @description: request基础trait
  * @author: He Chuan
@@ -12,6 +14,11 @@ trait HttpRequest
      * @var
      */
     protected $httpClient;
+
+    /**
+     * @var array
+     */
+    protected $middleware = [];
 
     /**
      * 默认options
@@ -33,7 +40,7 @@ trait HttpRequest
     public function request($url, $method = 'GET', $options = [])
     {
         $method = strtoupper($method);
-        $options = array_merge(self::$defaults, $options);
+        $options = array_merge(self::$defaults, $options, ['handler' => $this->getHandlerStack()]);
         $response = $this->getHttpClient()->request($method, $url, $options);
         $response->getBody()->rewind();
         return $response;
@@ -51,4 +58,54 @@ trait HttpRequest
         return $this->httpClient;
     }
 
+    public function setHttpClient()
+    {
+
+    }
+
+    /**
+     * Add a middleware.
+     *
+     * @param callable $middleware
+     * @param null|string $name
+     *
+     * @return $this
+     */
+    public function pushMiddleware(callable $middleware, $name = null)
+    {
+        if (!is_null($name)) {
+            $this->middleware[$name] = $middleware;
+        } else {
+            array_push($this->middleware, $middleware);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Return all middleware.
+     *
+     * @return array
+     */
+    public function getMiddleware()
+    {
+        return $this->middleware;
+    }
+
+    /**
+     * Build a handler stack.
+     *
+     * @return \GuzzleHttp\HandlerStack
+     */
+    public function getHandlerStack()
+    {
+
+        $handlerStack = HandlerStack::create();
+
+        foreach ($this->middleware as $name => $middleware) {
+            $handlerStack->push($middleware, $name);
+        }
+
+        return $handlerStack;
+    }
 }

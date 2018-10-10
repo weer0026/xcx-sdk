@@ -5,8 +5,9 @@ namespace HangJia\Xcx;
 /**
  * Class Factory.
  *
- * @method static \HangJia\Xcx\User
- * @method static \HangJia\Xcx\Submit
+ * @method static \HangJia\Xcx\User         user($config)
+ * @method static \HangJia\Xcx\Submit       submit($config)
+ * @method static \HangJia\Xcx\Platform     platform($config = [])
  */
 class Factory
 {

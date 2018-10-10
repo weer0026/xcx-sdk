@@ -5,7 +5,7 @@ namespace HangJia\Xcx;
 use HangJia\Xcx\Base\Application;
 
 /**
- * @description:
+ * @description: 用户级授权类
  * @author: He Chuan
  * @version: 18/9/25 下午1:44
  */
