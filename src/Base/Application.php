@@ -19,14 +19,12 @@ class Application
 
     protected $config = [
         'dev' => false,
-//        'cookie_domain' => 'xcx.hangjiayun.com',
-        'cookie_domain' => 'mm.hangjiayun.com'
+        'cookie_domain' => 'xcx.hangjiayun.com'
     ];
 
     protected $defaultConfig = [
         'timeout' => 5.0,
-        'base_uri' => 'http://mm.hangjiayun.com/api/mp/'
-//        'base_uri' => 'https://xcx.hangjiayun.com/api/mp/'
+        'base_uri' => 'https://xcx.hangjiayun.com/api/mp/'
     ];
 
     /**
