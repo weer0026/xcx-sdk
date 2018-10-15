@@ -15,7 +15,7 @@ class PlatformTest extends TestCase
     public function testAuthUrl()
     {
         $platform = \HangJia\Xcx\Factory::platform([
-            'secret_key' => 'VLYm3Egv5ODxN4Mb'
+            'secret_key' => ''
         ]);
         $ret = $platform->getToken(1);
         var_dump($ret);
