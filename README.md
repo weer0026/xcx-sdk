@@ -91,3 +91,23 @@ Array {
     }
 }
 ```
+
+## 平台接口
+
+### 获取component access token
+```php
+// secret_key（密钥）和partner_id（合作商ID）可在合作商后台-基本信息中找到
+$platform = \HangJia\Xcx\Factory::platform([
+    'secret_key' => 'xxxxxxxxxxxxx'
+]);
+$ret = $platform->getToken($partner_id);
+// 输出
+Array {
+    "code": 200,
+    "msg": "success",
+    "data": Array {
+        "component_access_token": "1iovFkaJK.....................",
+        "expires_date": "2018-10-15 15:49:48" // 过期时间
+    }
+}
+```
