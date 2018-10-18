@@ -34,7 +34,7 @@ class Application
      */
     public function __construct($config = [])
     {
-        $this->config = $this->config + $config;
+        $this->config = $config + $this->config;
     }
 
     public function getConfig()
